@@ -1,6 +1,13 @@
+# Amplify build spec for Next.js (SSR) + Gen 2 backend
+# Framework must be set to "Next.js - SSR" in Amplify Console:
+# Hosting > Build settings > Edit > Framework: Next.js - SSR
 version: 1
 backend:
   phases:
+    preBuild:
+      commands:
+        - nvm install 20
+        - nvm use 20
     build:
       commands:
         - npm ci --cache .npm --prefer-offline
